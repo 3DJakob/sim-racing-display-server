@@ -6,7 +6,17 @@ const cors = require('cors')
 const http = require('http')
 const server = http.createServer(app)
 const { Server } = require('socket.io')
-const io = new Server(server)
+
+// const io = new Server(server)
+
+const io = new Server(server, {
+  cors: {
+    origin: '192.168.1.127',
+    methods: ['GET', 'POST'],
+    // allowedHeaders: ['my-custom-header'],
+    credentials: true
+  }
+})
 
 app.use(cors())
 
