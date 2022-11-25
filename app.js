@@ -2,10 +2,13 @@ const F1TelemetryClient = require('f1-2021-udp').F1TelemetryClient
 const constants = require('f1-2021-udp').constants
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const http = require('http')
 const server = http.createServer(app)
 const { Server } = require('socket.io')
 const io = new Server(server)
+
+app.use(cors())
 
 const { PACKETS } = constants
 // const options: import('f1-2021-udp/build/src/types').Options = {
