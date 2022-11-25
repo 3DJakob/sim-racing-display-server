@@ -12,7 +12,7 @@ const { PACKETS } = constants
 //   port: 20777,
 //   ip
 // }
-const client = new F1TelemetryClient()
+const client = new F1TelemetryClient({ bigintEnabled: false })
 
 console.log(client)
 
