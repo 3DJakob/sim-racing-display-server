@@ -12,7 +12,7 @@ const { PACKETS } = constants
 //   port: 20777,
 //   ip
 // }
-const client = new F1TelemetryClient({ address: '192.168.1.98:20777' })
+const client = new F1TelemetryClient()
 
 console.log(client)
 
@@ -54,3 +54,5 @@ io.on('connection', (socket) => {
 server.listen(4000, () => {
   console.log('listening on *:4000')
 })
+
+client.start()
