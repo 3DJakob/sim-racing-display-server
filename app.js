@@ -42,6 +42,15 @@ client.on(PACKETS.carTelemetry, (data) => {
   io.emit('carTelemetry', data)
 })
 
+client.on(PACKETS.event, (data) => {
+  console.log(data)
+  io.emit('event', data)
+})
+
+client.on(PACKETS.carStatus, (data) => {
+  console.log(data)
+  io.emit('carStatus', data)
+})
 // client.on('session', (packet) => {
 //   console.log('session', packet)
 //   io.emit('session', packet)
