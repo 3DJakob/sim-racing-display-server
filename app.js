@@ -30,7 +30,7 @@ console.log(client)
 //   console.log(data)
 // })
 
-client.on(PACKETS.CarTelemetry, (data) => {
+client.on(PACKETS.carTelemetry, (data) => {
   console.log(data)
   io.emit('carTelemetry', data)
 })
