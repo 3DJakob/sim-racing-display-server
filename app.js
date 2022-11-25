@@ -18,34 +18,34 @@ console.log(client)
 
 // get motor rpm
 
-client.on(PACKETS.Motion, (data) => {
-  console.log(data)
-  io.emit('motion', data)
-})
+// client.on(PACKETS.Motion, (data) => {
+//   console.log(data)
+//   io.emit('motion', data)
+// })
 
-client.on('carStatus', function (data) {
-  console.log(data)
-})
+// client.on('carStatus', function (data) {
+//   console.log(data)
+// })
 
 client.on(PACKETS.CarTelemetry, (data) => {
   console.log(data)
   io.emit('carTelemetry', data)
 })
 
-client.on('session', (packet) => {
-  console.log('session', packet)
-  io.emit('session', packet)
-})
+// client.on('session', (packet) => {
+//   console.log('session', packet)
+//   io.emit('session', packet)
+// })
 
-client.on('lapData', (packet) => {
-  console.log('lapData', packet)
-  io.emit('lapData', packet)
-})
+// client.on('lapData', (packet) => {
+//   console.log('lapData', packet)
+//   io.emit('lapData', packet)
+// })
 
-app.get('/', (req, res) => {
-  // res.sendFile(__dirname + '/index.html')
-  res.send('Hello World!')
-})
+// app.get('/', (req, res) => {
+//   // res.sendFile(__dirname + '/index.html')
+//   res.send('Hello World!')
+// })
 
 io.on('connection', (socket) => {
   console.log('a user connected')
