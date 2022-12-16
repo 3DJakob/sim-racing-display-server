@@ -51,15 +51,20 @@ client.on(PACKETS.carStatus, (data) => {
   console.log(data)
   io.emit('carStatus', data)
 })
-// client.on('session', (packet) => {
-//   console.log('session', packet)
-//   io.emit('session', packet)
-// })
 
-// client.on('lapData', (packet) => {
-//   console.log('lapData', packet)
-//   io.emit('lapData', packet)
-// })
+client.on(PACKETS.session, (data) => {
+  console.log(data)
+  io.emit('session', data)
+})
+
+client.on(PACKETS.carSetups, (data) => {
+  console.log(data)
+  io.emit('carSetups', data)
+})
+
+client.on('lapData', (packet) => {
+  io.emit('lapData', packet)
+})
 
 // app.get('/', (req, res) => {
 //   // res.sendFile(__dirname + '/index.html')
